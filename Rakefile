@@ -49,10 +49,10 @@ namespace 'project' do
   end
 
   task :anonymize_database, [:project_name] do |_t, args|
-    print 'anonymize_database'
+    puts 'anonymize_database'
     project_name = args[:project_name]
     anonymizer = Anonymizer.new project_name
-    print anonymizer.config
+    puts anonymizer.config
 
     db = Database.new anonymizer.config
     db.anonymize

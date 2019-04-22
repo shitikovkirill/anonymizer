@@ -10,16 +10,13 @@ require 'shellwords'
 
 # Root directory
 ROOT_DIR = File.dirname File.expand_path __FILE__
-print ROOT_DIR
-print ''
+puts ROOT_DIR
 
 LOG_DIR = ROOT_DIR + '/log'
-print LOG_DIR
-print ''
+puts LOG_DIR
 
 APP_DIR = ROOT_DIR + '/lib/anonymizer'
-print APP_DIR
-print ''
+puts APP_DIR
 
 # Load models
 Dir[APP_DIR + '/model/**/*.rb'].each { |file| require file }
