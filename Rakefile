@@ -52,6 +52,7 @@ namespace 'project' do
     print 'anonymize_database'
     project_name = args[:project_name]
     anonymizer = Anonymizer.new project_name
+    print anonymizer.config
 
     db = Database.new anonymizer.config
     db.anonymize
