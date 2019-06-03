@@ -1,14 +1,13 @@
 version: '3'
 services:
   ruby:
-    image: anonymizer
+    image: 600075137595.dkr.ecr.us-west-1.amazonaws.com/anonymizer
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - $PWD:/usr/src/anonymizer
+    #volumes:
+    #  - $PWD:/usr/src/anonymizer
     environment:
       - RUBY_ENV=magento2
     env_file:
-      - database.env
-    command: ['bash', '-c', 'sleep 60000']
+      - config/env/database.env

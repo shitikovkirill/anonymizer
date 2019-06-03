@@ -1,0 +1,7 @@
+version: "2"
+services:
+
+  aws-cli:
+    image: mesosphere/aws-cli
+    env_file:
+    - config/env/aws.env
