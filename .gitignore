@@ -4,3 +4,5 @@ coverage
 web/data/*
 
 log/*.log
+
+database.env

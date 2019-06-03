@@ -1,0 +1,18 @@
+logger:
+  enabled: true
+dump_server:
+  host:
+  user:
+  port:
+  passphrase:
+  path: /tmp/test
+web_server:
+database:
+  user: <USER>
+  host: <HOST>
+  pass: <PASS>
+tmp_path: /tmp
+cap:
+  ssh_options:
+    keys:
+    - /path/to/private/ssh/key/for/deployment
