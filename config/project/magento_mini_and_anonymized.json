@@ -1,0 +1,38 @@
+{
+  "type": "extended",
+  "basic_type": "magento_2_0",
+  "random_string": "ba74a64a152b84ec004d03caba15ba95",
+  "dump_server": {
+    "host": "",
+    "port": "",
+    "user": "",
+    "path": "/tmp/test/"
+  },
+  "tables": {
+    "amasty_audit_log_details": {
+      "only_truncate": {
+        "action": "truncate"
+      }
+    },
+    "aw_arep_log_product_view": {
+      "only_truncate": {
+        "action": "truncate"
+      }
+    },
+    "dyode_audit_log": {
+      "only_truncate": {
+        "action": "truncate"
+      }
+    },
+    "emarsys_log_details": {
+      "only_truncate": {
+        "action": "truncate"
+      }
+    },
+    "media_storage_file_storage": {
+      "only_truncate": {
+        "action": "truncate"
+      }
+    }
+  }
+}

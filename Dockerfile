@@ -24,3 +24,5 @@ COPY --chown=1000:1000 $pwd .
 USER anonymizer
 
 RUN bundle install --deployment --force
+
+ENTRYPOINT ["/usr/src/anonymizer/start.sh"]
