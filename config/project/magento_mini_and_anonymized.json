@@ -34,5 +34,10 @@
         "action": "truncate"
       }
     }
+  },
+  "custom_queries": {
+    "after": [
+      "UPDATE core_config_data SET value = REPLACE(value, 'staging.icuracao.com', 'localstaging.icuracao.com') WHERE value REGEXP '^https?://staging\\.icuracao\\.com'"
+    ]
   }
 }
