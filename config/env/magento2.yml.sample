@@ -5,13 +5,13 @@ dump_server:
   user:
   port:
   passphrase:
-  path: /tmp/test
+  path: /backup
 web_server:
 database:
   user: <USER>
   host: <HOST>
   pass: <PASS>
-tmp_path: /tmp
+tmp_path: /backup
 cap:
   ssh_options:
     keys:

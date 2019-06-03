@@ -21,6 +21,8 @@ RUN if [ ! `id -g anonymizer &> /dev/null` ]; then groupadd -f -g ${GID} anonymi
 
 COPY --chown=1000:1000 $pwd .
 
+RUN mkdir /backup && chown anonymizer -R /backup
+
 USER anonymizer
 
 RUN bundle install --deployment --force

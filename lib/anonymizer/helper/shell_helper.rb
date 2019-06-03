@@ -30,7 +30,7 @@ module ShellHelper
     command = "mysqldump#{mysql_options(database)} #{project_name} | " \
       'grep -av "SQL SECURITY DEFINER" | sed -e \'s/DEFINER[ ]*=[ ]*[^*]*\*/\*/\' | ' \
       "gzip > #{tmp_dir}/#{project_name}#{random_string}.sql.gz"
-
+    puts command
     remove_white_space(command)
   end
 
