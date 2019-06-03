@@ -1,0 +1,3 @@
+config/env/magento2.yml
+config/env/database.env
+config/env/aws.env
