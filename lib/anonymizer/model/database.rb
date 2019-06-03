@@ -23,6 +23,8 @@ class Database
       queries = column_query(table_name, columns)
 
       queries.each do |query|
+        puts "Query: "
+        puts query
         @db.run query
       end
     end
