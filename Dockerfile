@@ -9,7 +9,6 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y \
-        mysql-client \
         rsync \
         build-essential \
     && apt-get clean \
@@ -25,6 +24,6 @@ RUN mkdir /backup && chown anonymizer -R /backup
 
 USER anonymizer
 
-RUN bundle install --deployment --force
+RUN bundle update && bundle install --deployment --force --path vendor/cache
 
 ENTRYPOINT ["/usr/src/anonymizer/start.sh"]

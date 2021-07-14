@@ -1,13 +1,22 @@
 version: '3'
 services:
-  ruby:
-    image: 600075137595.dkr.ecr.us-west-1.amazonaws.com/anonymizer
+  anonymizer:
     build:
       context: .
       dockerfile: Dockerfile
-    #volumes:
-    #  - $PWD:/usr/src/anonymizer
     environment:
       - RUBY_ENV=magento2
     env_file:
       - config/env/database.env
+    depends_on:
+      - db
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=magento2
+      - MYSQL_USER=magento2
+      - MYSQL_DATABASE=magento2
+      - MYSQL_PASSWORD=magento2
+
