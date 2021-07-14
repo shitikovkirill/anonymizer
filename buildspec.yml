@@ -3,9 +3,12 @@ version: 0.2
 phases:
   build:
     commands:
+      - echo "Using docker"
       - docker build . -t anonimizer
+      - mkdir -p backup
+      - docker run --rm -e RUBY_ENV=magento2 -e ANONYMIZE_TYPE=magento_mini_not_anonymized -e DB_HOST=$DB_HOST -e DB_USER=$DB_USER -e DB_PASS=$DB_PASS -e DB_NAME=$DB_NAME anonimizer
 
 artifacts:
   files:
     - '**/*'
-  name: source.zip
+  name: datbase.zip

@@ -9,6 +9,7 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y \
+        default-mysql-client \
         rsync \
         build-essential \
     && apt-get clean \
@@ -20,10 +21,10 @@ RUN if [ ! `id -g anonymizer &> /dev/null` ]; then groupadd -f -g ${GID} anonymi
 
 COPY --chown=1000:1000 $pwd .
 
-RUN mkdir /backup && chown anonymizer -R /backup
+RUN mkdir /backup && chown anonymizer -R /backup && mkdir -p vendor && chown anonymizer -R vendor
 
 USER anonymizer
 
-RUN bundle update && bundle install --deployment --force --path vendor/cache
+RUN bundle install --deployment --force --path vendor/cache
 
 ENTRYPOINT ["/usr/src/anonymizer/start.sh"]
